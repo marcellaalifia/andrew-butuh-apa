@@ -8,31 +8,24 @@
         function solusiAndrew() {
             let pilihan = document.getElementById("pilihan").value;
             let cash = 0;  // Simulasi belum gajian
-            let pinjol = true;
-            let card = false;
             let hasil;
 
-            if (pilihan === "Healing") {
-                hasil = "Andrew ajak Sabrina dan Hadi pergi ke Hualien untuk healing.";
-            } else if (cash < 1) {
-                hasil = "Andrew minta uang ke Hadi 50,000 NTD karena belum gajian.";
+            // Logika solusi berdasarkan pilihan
+            if (pilihan === "Ipad") {
+                hasil = "Andrew ngutang ke Harry untuk beli Ipad.";
+            } else if (pilihan === "Macbook") {
+                hasil = "Andrew ngutang ke Cella untuk beli Macbook.";
+            } else if (pilihan === "Pinjam ke Hadi") {
+                hasil = "Andrew minta uang ke Hadi 50,000 NTD.";
+            } else if (pilihan === "Healing") {
+                hasil = "Andrew ajak Sabrina pergi ke Hualien untuk healing.";
             } else if (pilihan === "Bosan di rumah") {
-                hasil = "Andrew pergi keluar rumah saat taifun karena bosan di rumah.";
-            } else if (cash >= 1 || card) {
-                hasil = "Andrew bisa beli " + pilihan.toLowerCase();
+                hasil = "Andrew keluar rumah di saat taifun karena bosan di rumah.";
             } else {
-                hasil = "Andrew ngutang Harry untuk " + pilihan.toLowerCase();
+                hasil = "Andrew belum memutuskan.";
             }
 
             document.getElementById("hasil").innerHTML = hasil;
-            putarVideo();  // Putar video setelah solusi keluar
-        }
-
-        function putarVideo() {
-            let video = document.getElementById("videoHealing");
-            video.style.display = "block";
-            video.play();
-            video.loop = true;  // Video diputar terus menerus
         }
     </script>
 </head>
@@ -42,17 +35,12 @@
     <select id="pilihan">
         <option value="Macbook">Andrew lagi butuh Macbook</option>
         <option value="Ipad">Andrew lagi butuh Ipad</option>
+        <option value="Pinjam ke Hadi">Andrew belum gajian</option>
         <option value="Healing">Andrew lagi butuh Healing</option>
         <option value="Bosan di rumah">Andrew bosan di rumah</option>
     </select>
     <br><br>
     <button onclick="solusiAndrew()">Klik untuk mengetahui solusinya</button>
     <p id="hasil"></p>
-    
-    <!-- Video healing -->
-    <video id="videoHealing" width="320" height="240" style="display:none" controls>
-        <source src="/mnt/data/WhatsApp Video 2024-10-02 at 13.51.11.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-    </video>
 </body>
 </html>
