@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Butuh Apa?</title>
+    <script>
+        function solusiAndrew() {
+            let pilihan = document.getElementById("pilihan").value;
+            let cash = 0;
+            let pinjol = true;
+            let card = false;
+            let hasil;
+
+            if (cash >= 1 || card) {
+                hasil = "no " + pilihan.toLowerCase();
+            } else {
+                hasil = "ngutang Harry untuk " + pilihan.toLowerCase();
+            }
+
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+    </script>
+</head>
+<body>
+    <h1>Andrew Butuh Apa?</h1>
+    <label for="pilihan">Pilih kebutuhan Andrew:</label>
+    <select id="pilihan">
+        <option value="Macbook">Andrew lagi butuh Macbook</option>
+        <option value="Ipad">Andrew lagi butuh Ipad</option>
+        <option value="Healing">Andrew lagi butuh Healing</option>
+    </select>
+    <br><br>
+    <button onclick="solusiAndrew()">Klik untuk mengetahui solusinya</button>
+    <p id="hasil"></p>
+</body>
+</html>
